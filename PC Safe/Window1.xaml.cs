@@ -21,9 +21,11 @@ namespace PC_Safe
     public partial class Window1 : Window
     {
         librarian loggedLibrarian = MainWindow.currentLibrarian;
+
         public Window1()
         {
             InitializeComponent();
+            
             librarianName.Text = loggedLibrarian.Username;
             workingDays.Text = loggedLibrarian.Working_days;
             workingHours.Text = loggedLibrarian.Working_hours;
@@ -98,6 +100,10 @@ namespace PC_Safe
                 case 2:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new UserControlHistory());
+                    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlAbout());
                     break;
                 default:
                     break;

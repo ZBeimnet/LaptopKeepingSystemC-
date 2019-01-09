@@ -169,6 +169,9 @@
     <Compile Include="student.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControlAbout.xaml.cs">
+      <DependentUpon>UserControlAbout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCurrentUsers.xaml.cs">
       <DependentUpon>UserControlCurrentUsers.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlCurrentUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

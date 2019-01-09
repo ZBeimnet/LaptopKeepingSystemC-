@@ -145,7 +145,7 @@
                 <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                     <Grid x:Name="GridCursor" Margin="0 0 0 0" VerticalAlignment="Top" Background="White" Width="10" HorizontalAlignment="Left" Height="60"/>
                 </materialDesign:TransitioningContent>
-                <ListView x:Name="ListViewMenu" SelectionChanged="ListViewMenu_SelectionChanged" >
+                <ListView x:Name="ListViewMenu" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="listViewItem" Height="60" RenderTransformOrigin="0.5,0.5">
                         <ListViewItem.RenderTransform>
                             <TransformGroup>
@@ -188,7 +188,7 @@
                             <TextBlock Text="Todays's History" Margin="10" VerticalAlignment="Center"/>
                         </StackPanel>
                     </ListViewItem>
-                    <!--<ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5">
                         <ListViewItem.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -201,7 +201,7 @@
                             <materialDesign:PackIcon Kind="About" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                             <TextBlock Text="About" Margin="10" VerticalAlignment="Center"/>
                         </StackPanel>
-                    </ListViewItem>-->
+                    </ListViewItem>
 
                 </ListView>
             </Grid>
