@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="PC_Safe.UserControlOneCurrentUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Safe"
+             mc:Ignorable="d" 
+             Height="120" Width="500">
+    <Grid Background="#FFF3F3F3" DataContext="{x:Static local:CurrentUserViewModel.Instance}">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="10" Color="#FFDEDEDE" ShadowDepth="1"/>
+        </Grid.Effect>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Padding="10">
+            <Border Background="Purple" 
+                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                    CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                <TextBlock Text="{Binding Initials}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontSize="30"/>
+
+            </Border>
+        </Border>
+
+        <Border Grid.Column="1" Padding="10 0 10 0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="{Binding Name}" FontSize="25"/>
+                <TextBlock Text="{Binding Id}" FontSize="25"/>
+                <TextBlock Text="{Binding Entry_time}" FontSize="25"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

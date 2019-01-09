@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="PC_Safe.UserControlHome"
+             xmlns:loadin="clr-namespace:LoadingIndicators.WPF;assembly=LoadingIndicators.WPF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Safe"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="auto" Width="auto"
+             >
+ 
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.5}">
+            <Grid Margin="5" Grid.Row="1" Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <materialDesign:PackIcon Kind="IdentificationCard" Foreground="#222222" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox x:Name="idTextBox" TextChanged="IdTextBox_TextChanged" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Identification Number" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="0, 10" FontFamily="Champagne &amp; Limousines" FontSize="13" Width="250"/>
+                    <!--<Button  Margin="15,0" Width="100" Height="35" Background="DarkGray" Click="ButtonCheck_Click">
+                            <materialDesign:PackIcon Kind="Check" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                    </Button>-->
+                   
+                    <!--<Grid x:Name="TagLoadingIndicator" Panel.ZIndex="1">
+                        <loadin:LoadingIndicator x:Name="li" SpeedRatio="{Binding SpeedRatio}" IsActive="{Binding IsDoubleBounceActive}" Style="{DynamicResource LoadingIndicatorDoubleBounceStyle}"/>
+                    </Grid>-->
+                </StackPanel>
+                <Grid Height="360" Width="500" Background="#FFF3F3F3" x:Name="displayedCard" HorizontalAlignment="Center" Margin="0, 80, 0, 0">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="2"/>
+                    </Grid.Effect>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Image x:Name="studentPhoto" Stretch="UniformToFill"/>
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                            <TextBlock x:Name="studentName" HorizontalAlignment="Left" Text="Name" FontSize="30" FontFamily="Champagne &amp; Limousines" Margin="10" Width="340"/>
+                            <TextBlock x:Name="studentId" Text="Id" HorizontalAlignment="Left" FontSize="30" Margin="10" Width="340"/>
+                            <TextBlock x:Name="studentDepartment" HorizontalAlignment="Left" Text="Department" FontSize="30" Margin="10" Width="340"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,10,0,0" Grid.Column="0" Grid.Row="1">
+                        <Image x:Name="pcPhoto" Stretch="UniformToFill"/>
+                    </Grid>
+                    <Grid Margin="0,10,0,0" Grid.Column="1" Grid.Row="1">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <TextBlock x:Name="brand" HorizontalAlignment="Left" Text="" FontSize="30" Margin="10" Width="340"/>
+                            <TextBlock x:Name="laptopSerialNo" Text="Serial Number" HorizontalAlignment="Left" FontSize="30" Margin="10" Width="340"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="2">
+                        <Button x:Name="checkButton" Margin="15,0" Width="200" HorizontalAlignment="Left" Height="45" Background="Green" Click="ButtonChecked_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CheckAll" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                                <TextBlock Text="Checked" FontSize="25"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid Height="140" Background="#FFF3F3F3" Width="500" x:Name="displayEntryConfirmation">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="2"/>
+                    </Grid.Effect>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="confirmationMessage" Foreground="Green" HorizontalAlignment="Center" Text="Confirmed" FontSize="30" Margin="10" />
+                        <Button x:Name="confirmationButton" Margin="15,0" Width="200" HorizontalAlignment="Center" Height="45" Background="Green" Click="ButtonConfirm_Click">
+                            <materialDesign:PackIcon Kind="CheckAll" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+           
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

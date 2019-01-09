@@ -1,0 +1,54 @@
+﻿<Window x:Class="PC_Safe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC_Safe"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="500" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid MouseDown="Grid_MouseDown">
+        <Rectangle Height="280" VerticalAlignment="Top">
+            
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF222222" Offset="1"/>
+                    <GradientStop Color="#FF333333" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="0">
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Foreground="White" Width="30" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonMinimize_Click" Margin="0,5">
+                <materialDesign:PackIcon Kind="WindowMinimize"/>
+            </Button>
+            <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonClose_Click">
+                <materialDesign:PackIcon Kind="Power"/>
+            </Button>
+        </StackPanel>
+        <TextBlock Text="AAU LIBRARIES - LAPTOP KEEPING" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0" Foreground="White" FontSize="18"/>
+        <Image Source="Assets/pcSafe2.png"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 40 0 0"  Width="150"/>
+        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,50" RadiusY="14" RadiusX="14">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,50">
+            <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <TextBox x:Name="username" materialDesign:HintAssist.Hint="USERNAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0, 10" FontFamily="Champagne &amp; Limousines" FontSize="13"/>
+                <PasswordBox x:Name="password" materialDesign:HintAssist.Hint="PASSWORD" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0, 10" FontFamily="Champagne &amp; Limousines" FontSize="13"/>
+                <TextBlock Foreground="Red" x:Name="validation" Padding="0, 10" FontFamily="Champagne &amp; Limousines" FontSize="13"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <Button  Background="#FF222222" VerticalAlignment="Bottom" Margin="0,35" Width="150" Height="50" Click="Button_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <StackPanel Orientation="Horizontal" Margin="10 0">
+                <materialDesign:PackIcon Kind="Login" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock Text="Login" Margin="10" Foreground="White" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
